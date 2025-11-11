@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:./demo.db        # file sẽ tạo trong thư mục backend
+    driver-class-name: org.sqlite.JDBC
+  jpa:
+    hibernate:
+      ddl-auto: update
+      dialect: org.hibernate.community.dialect.SQLiteDialect
+    show-sql: true
+  cache:
+    type: simple                      # dùng cache in-memory cho local
+  data:
+    redis:
+      host: localhost                 # nếu bạn không có Redis, bỏ phần này hoặc dùng Mock
+      port: 6379
+
+server:
+  port: 8080
+
